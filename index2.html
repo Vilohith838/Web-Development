@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Food Carousel</title>
+    <style>
+      body {
+        background-color: #deb878;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+        text-transform: capitalize;
+      }
+
+      .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+      }
+
+      .myslides {
+        display: none;
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>My Favourite Foods</h1>
+
+    <div class="carousel-container">
+      <img class="myslides" src="pic.jpg" height="300" width="300" alt="Pizza">
+      <img class="myslides" src="pic1.jpg" height="300" width="300" alt="Burger">
+      <img class="myslides" src="pic2.jpg" height="300" width="300" alt="Pasta">
+      <img class="myslides" src="pic3.jpg" height="300" width="300" alt="Sushi">
+         </div>
+
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let slides = document.getElementsByClassName("myslides");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>
